@@ -20,29 +20,47 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <div className="flex grid md:grid-cols-2 min-[320px]:grid-cols-2 lg:grid-cols-4 justify-evenly">
+      <div className="flex grid md:grid-cols-2 min-[320px]:grid-cols-2 lg:grid-cols-4 justify-end">
         {homes.map((home) => {
           return (
             <div
               key={home.id}
-              className="flex-1 max-w-sm rounded overflow-hidden shadow-lg"
+              className="flex-1 max-w-sm rounded overflow-hidden shadow-lg rounded-md"
             >
               <img
-                className="w-full"
+                className="w-full h-72"
                 src="https://picsum.photos/200/300"
                 alt="Sunset in the mountains"
               />
-              <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">{home.address}</div>
-                <div className="text-sm mb-2">{`${home.city} ${home.state} ${home.zipCode}`}</div>
+              <div className="flex px-4 py-2 justify-center">
+                <div className="flex-3 font-bold text-3xl">{home.address}</div>
+                <span className="flex-1">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className=" w-5 h-5 mr-2"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M9.664 1.319a.75.75 0 01.672 0 41.059 41.059 0 018.198 5.424.75.75 0 01-.254 1.285 31.372 31.372 0 00-7.86 3.83.75.75 0 01-.84 0 31.508 31.508 0 00-2.08-1.287V9.394c0-.244.116-.463.302-.592a35.504 35.504 0 013.305-2.033.75.75 0 00-.714-1.319 37 37 0 00-3.446 2.12A2.216 2.216 0 006 9.393v.38a31.293 31.293 0 00-4.28-1.746.75.75 0 01-.254-1.285 41.059 41.059 0 018.198-5.424zM6 11.459a29.848 29.848 0 00-2.455-1.158 41.029 41.029 0 00-.39 3.114.75.75 0 00.419.74c.528.256 1.046.53 1.554.82-.21.324-.455.63-.739.914a.75.75 0 101.06 1.06c.37-.369.69-.77.96-1.193a26.61 26.61 0 013.095 2.348.75.75 0 00.992 0 26.547 26.547 0 015.93-3.95.75.75 0 00.42-.739 41.053 41.053 0 00-.39-3.114 29.925 29.925 0 00-5.199 2.801 2.25 2.25 0 01-2.514 0c-.41-.275-.826-.541-1.25-.797a6.985 6.985 0 01-1.084 3.45 26.503 26.503 0 00-1.281-.78A5.487 5.487 0 006 12v-.54z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div> 
+                </span>
               </div>
-              <div className="px-6 pt-4 pb-2 flex justify-between">
+              <div className="flex px-4 py-2">
+                <div className="text-xl text-gray-500">{`${home.city} ${home.state} ${home.zipCode}`}</div>
+              </div>
+              <div className="px-6 pb-4 mt-4 mb-10 flex justify-between">
                 <div className="flex">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-1 w-5 h-5"
+                    className="flex-1 w-5 h-5 mr-2"
                   >
                     <path
                       fill-rule="evenodd"
@@ -57,7 +75,7 @@ const Home: NextPage = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-1 w-5 h-5"
+                    className="flex-1 w-5 h-5 mr-2"
                   >
                     <path
                       fill-rule="evenodd"
@@ -72,7 +90,7 @@ const Home: NextPage = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-1 w-5 h-5"
+                    className="flex-1 w-5 h-5 mr-2"
                   >
                     <path
                       fill-rule="evenodd"
@@ -87,7 +105,7 @@ const Home: NextPage = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="flex-1 w-5 h-5"
+                    className="flex-1 w-5 h-5 mr-2"
                   >
                     <path
                       fill-rule="evenodd"
@@ -102,7 +120,7 @@ const Home: NextPage = () => {
           )
         })}
       </div>
-      <div className="text-center lg:text-left">
+      <div className="mt-20 text-center lg:text-left">
         <button
           type="button"
           onClick={logout}
